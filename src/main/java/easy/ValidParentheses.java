@@ -55,10 +55,11 @@ public class ValidParentheses {
             if (bracket == '(' || bracket == '{' || bracket == '[') {
                 stack.push(bracket);
             } else {
-                Character openingBracket = stack.pollFirst();
-                if (openingBracket == null) {
+                if (stack.isEmpty()) {
                     return false;
                 }
+                char openingBracket = stack.pop();
+
                 if (openingBracket == '(' && bracket == ')') {
                     continue;
                 }
