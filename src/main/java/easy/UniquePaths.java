@@ -1,6 +1,8 @@
 package easy;
 
 public class UniquePaths {
+    // without helper (memory) array - O(2^(n+m))
+    // with helper (memory) array - O(n*m) (dynamic programming)
     public int uniquePaths(int m, int n) {
         return helper(new int[m + 1][n + 1], m, n);
     }
